@@ -5,5 +5,7 @@ api.get("/", function(req, res, next){
     res.send('Hello World');
 });
 
-console.log('server started');
+console.log('Server started');
 api.listen(3000);
+
+module.exports = api;
