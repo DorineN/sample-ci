@@ -2,11 +2,13 @@ var express = require('express');
 var api = express();
 var DEFAULT_PORT = 3000;
 
-api.get("/contacts", function(req, res, next){
+api.use(express.static('public'));
+
+api.get("/api", function(req, res, next){
     res.send([]);
 });
 
-api.post("/contacts/:name", function(req, res, next){
+api.post("/api/contacts", function(req, res, next){
     res.send();
 });
 
@@ -16,11 +18,11 @@ api.put("/contacts/:name", function(req, res, next){
     res.send();
 });
 
-api.get("//contacts/:name/:new", function(req, res, next){
+api.get("/api/contacts/:name/:new", function(req, res, next){
     res.send();
 });
 
-api.get("//contacts/:name", function(req, res, next){
+api.get("/api/contacts/:name", function(req, res, next){
     res.send();
 });
 
